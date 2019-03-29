@@ -1,0 +1,58 @@
+﻿<Window x:Class="U2DavidLaughtonT_Shirt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:U2DavidLaughtonT_Shirt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid Background="Black">
+        <Grid Background="White" Margin="0,0,264,0">
+            <StackPanel Background="LightGray">
+                <!--TO get user input-->
+                <TextBlock Text="Enter below to customize soccer shirt" Height="30" />
+                <TextBlock Text="Enter number below (Two Digits):" />                
+                <TextBox x:Name="numberEnter" Background="Gray" />
+                <TextBlock Text="Enter colour for number:"/>
+                <TextBox x:Name="numberColourEnter" Background="Gray"/>
+                <TextBlock Text="Enter colour below:" />
+                <TextBox x:Name="colourEnter" Background="Gray" />
+                <TextBlock Text="Enter colour below for sleeve checkers:" />
+                <TextBox x:Name="colourEnterChecker" Background="Gray" />
+                <TextBlock Text="Enter other colour below for sleeve checkers:" />
+                <TextBox x:Name="colourEnterChecker2" Background="Gray" />
+                <Button x:Name="shirtCustom" Content="Click" Click="shirtCustom_Click" />
+            </StackPanel>
+        </Grid>
+        <!--Main part of shirt-->
+        <Rectangle Margin="295,112,126,101" Fill="White" x:Name="rectangleColour"/>
+        <!--Left sleeve-->
+        <Canvas Margin="282,117,204,152" RenderTransformOrigin="0.5,0.5" x:Name="canvas">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="38.993"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+        <!--Right sleeve-->
+        <Canvas Margin="378,115,108,154" RenderTransformOrigin="0.5,0.5" x:Name="canvas1">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-40.285"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+        <Ellipse Fill="Black" Margin="308,59,142,191" x:Name="ellipse"/>
+        <!--Number-->
+        <TextBlock HorizontalAlignment="Left" Margin="315,133,0,0" TextWrapping="Wrap" FontSize="50"
+         VerticalAlignment="Top" Height="76" Width="60" x:Name="shirtNumber" 
+         RenderTransformOrigin="0.832,0.519"  />
+    </Grid>
+</Window>
