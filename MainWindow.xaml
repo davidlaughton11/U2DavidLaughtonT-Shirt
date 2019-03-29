@@ -5,14 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:U2DavidLaughtonT_Shirt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" MaxHeight="350" MaxWidth="525" MinHeight="350" MinWidth="525">
 
-    <Grid Background="Black">
+    <Grid Background="Black" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleY="1" ScaleX="1"/>
+                <SkewTransform AngleY="0" AngleX="0"/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Grid Background="White" Margin="0,0,264,0">
             <StackPanel Background="LightGray">
                 <!--TO get user input-->
                 <TextBlock Text="Enter below to customize soccer shirt" Height="30" />
-                <TextBlock Text="Enter number below (Two Digits):" />                
+                <TextBlock Text="Enter number below (Two Digits):" />
                 <TextBox x:Name="numberEnter" Background="Gray" />
                 <TextBlock Text="Enter colour for number:"/>
                 <TextBox x:Name="numberColourEnter" Background="Gray"/>
@@ -25,8 +33,30 @@
                 <Button x:Name="shirtCustom" Content="Click" Click="shirtCustom_Click" />
             </StackPanel>
         </Grid>
+        <!--Pants-->
+        <Rectangle Fill="White" Margin="294,201,193,12" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="11.743"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!--Pants-->
+        <Rectangle Fill="White" Margin="357,196,131,8" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-20.367"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
         <!--Main part of shirt-->
-        <Rectangle Margin="295,112,126,101" Fill="White" x:Name="rectangleColour"/>
+        <Rectangle Margin="295,112,135,101" Fill="White" x:Name="rectangleColour"/>
         <!--Left sleeve-->
         <Canvas Margin="282,117,204,152" RenderTransformOrigin="0.5,0.5" x:Name="canvas">
             <Canvas.RenderTransform>
@@ -39,7 +69,7 @@
             </Canvas.RenderTransform>
         </Canvas>
         <!--Right sleeve-->
-        <Canvas Margin="378,115,108,154" RenderTransformOrigin="0.5,0.5" x:Name="canvas1">
+        <Canvas Margin="370,117,116,152" RenderTransformOrigin="0.5,0.5" x:Name="canvas1">
             <Canvas.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -50,9 +80,24 @@
             </Canvas.RenderTransform>
         </Canvas>
         <Ellipse Fill="Black" Margin="308,59,142,191" x:Name="ellipse"/>
-        <!--Number-->
+        <!--Number on shirt-->
         <TextBlock HorizontalAlignment="Left" Margin="315,133,0,0" TextWrapping="Wrap" FontSize="50"
          VerticalAlignment="Top" Height="76" Width="60" x:Name="shirtNumber" 
          RenderTransformOrigin="0.832,0.519"  />
+        <!--Elon musks face-->
+        <Image Source="http://elonmask.co/images/mask2.png" Margin="302,15,126,186"/>
+        <Image Source="http://pngimg.com/uploads/football_boots/football_boots_PNG61.png" Margin="365,245,63,-44"/>
+        <Image Source="http://pngimg.com/uploads/football_boots/football_boots_PNG61.png" Margin="240,243,192,-39" RenderTransformOrigin="0.5,0.5" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+
     </Grid>
 </Window>
